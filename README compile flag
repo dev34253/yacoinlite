@@ -1,0 +1,5 @@
+For scrypt-jane, you need to compile with CFLAGS="-fPIC"
+
+Example: 
+./configure --disable-tests --with-imcompatible-bdb CFLAGS="-fPIC -O2"
+ 

@@ -37,6 +37,19 @@ class QProgressBar;
 class QProgressDialog;
 QT_END_NAMESPACE
 
+
+// POW mining status
+enum MiningStatus
+{
+    POW_OFF,
+    POW_STARTED,
+    POW_ENABLED,
+    POW_SHUTDOWN,
+    POW_RPCRUNNING,
+
+    POW_ERROR
+};
+
 /**
   Bitcoin GUI main class. This class represents the main window of the Bitcoin UI. It communicates with both the client and
   wallet models to give the user an up-to-date view of the current core state.
@@ -85,6 +98,7 @@ private:
     QLabel *labelWalletHDStatusIcon;
     QLabel *connectionsControl;
     QLabel *labelBlocksIcon;
+    QLabel *labelMiningIcon;
     QLabel *progressBarLabel;
     QProgressBar *progressBar;
     QProgressDialog *progressDialog;
@@ -111,6 +125,7 @@ private:
     QAction *openRPCConsoleAction;
     QAction *openAction;
     QAction *showHelpMessageAction;
+    QAction *minerAction;        // major action?
 
     QSystemTrayIcon *trayIcon;
     QMenu *trayIconMenu;
@@ -207,6 +222,10 @@ private Q_SLOTS:
 
     /** Show open dialog */
     void openClicked();
+
+    /** Mine Yacoins */
+      void mineYacoins();
+
 #endif // ENABLE_WALLET
     /** Show configuration dialog */
     void optionsClicked();
@@ -218,6 +237,7 @@ private Q_SLOTS:
     void showDebugWindowActivateConsole();
     /** Show help message dialog */
     void showHelpMessageClicked();
+
 #ifndef Q_OS_MAC
     /** Handle tray icon clicked */
     void trayIconActivated(QSystemTrayIcon::ActivationReason reason);
