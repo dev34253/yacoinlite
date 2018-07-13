@@ -17,6 +17,7 @@
 #include <net.h>
 #include <policy/fees.h>
 #include <pow.h>
+#include <primitives/block.h>
 #include <rpc/blockchain.h>
 #include <rpc/mining.h>
 #include <rpc/server.h>
@@ -32,6 +33,7 @@
 #include <univalue.h>
 
 extern uint64_t nHashesPerSec;
+extern uint64_t nHashesDone;
 
 unsigned int ParseConfirmTarget(const UniValue& value)
 {
@@ -215,6 +217,8 @@ UniValue getmininginfo(const JSONRPCRequest& request)
 
 
     LOCK(cs_main);
+
+
 
     UniValue obj(UniValue::VOBJ);
     obj.push_back(Pair("blocks",           (int)chainActive.Height()));
@@ -1034,7 +1038,7 @@ UniValue setgenerate(const JSONRPCRequest& request)
     if (request.params.size() > 1)
     {
         nGenProcLimit = request.params[1].get_int();
-        if (nGenProcLimit == 0)
+        if ((nGenProcLimit == 0) || (nHashesPerSec == 0))
             fGenerate = false;
     }
 
@@ -1044,6 +1048,7 @@ UniValue setgenerate(const JSONRPCRequest& request)
 
     if (!fGenerate){
             nHashesPerSec = 0;
+            nHashesDone = 0;
     }
 
     nGenProcLimit = nGenProcLimit >= 0 ? nGenProcLimit : numCores;

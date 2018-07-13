@@ -130,7 +130,7 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
         // Restore failed (perhaps missing setting), center the window
         move(QApplication::desktop()->availableGeometry().center() - frameGeometry().center());
     setStyleSheet("selection-color: #000066;");
-    resize(850, 550);
+    //resize(850, 550);
 
 
     }
@@ -757,6 +757,7 @@ void BitcoinGUI::gotoVerifyMessageTab(QString addr)
 
 MiningStatus powminer;
 extern uint64_t nHashesPerSec;
+extern uint64_t nHashesDone;
 
 void BitcoinGUI::mineYacoins()
 {
@@ -804,9 +805,10 @@ void BitcoinGUI::mineYacoins()
 
         case POW_SHUTDOWN:
                     fGenerate = false;
-                    GenerateYacoins(fGenerate, -1, Params());
-                    gArgs.SoftSetArg("-gen", ("0"));
+                    GenerateYacoins(fGenerate, 0, Params());
+                    gArgs.SoftSetArg("-gen", (fGenerate ? "1" : "0"));
                     nHashesPerSec = 0;
+                    nHashesDone = 0;
                     sleep(3);
                     powminer = POW_OFF;
                     minerAction->setStatusTip(tr("CPU MINER IS OFF"));
@@ -815,7 +817,7 @@ void BitcoinGUI::mineYacoins()
         case POW_STARTED:
                     fGenerate = true;
                     GenerateYacoins(fGenerate, -1, Params());
-                    gArgs.SoftSetArg("-gen", ("1"));
+                    gArgs.SoftSetArg("-gen", (fGenerate ? "1" : "0"));
                     powminer = POW_ENABLED;
                     minerAction->setStatusTip(tr("CPU MINER RUNNING"));
                     break;

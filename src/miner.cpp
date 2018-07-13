@@ -614,7 +614,8 @@ void static YacoinMiner(const CChainParams& chainparams)
                     }
                     pblock->nNonce += 1;
                     nHashesDone += 1;
-                    if (nHashesDone % 500000 == 0) {   //Calculate hashing speed
+                    //if (nHashesDone % 500000 == 0) {   //Calculate hashing speed
+                    if (nHashesDone > 500) {   //Calculate hashing speed
                         nHashesPerSec = nHashesDone / (((GetTimeMicros() - nMiningTimeStart) / 1000000) + 1);
                     } 
                     if ((pblock->nNonce & 0xFF) == 0)
