@@ -294,7 +294,7 @@ void scrypt_1024_1_1_256_sp_generic(const char *input, char *output, char *scrat
 }
 
 
-void scrypt_hash(const void* password, size_t password_len, const void* salt, size_t salt_len, unsigned char Nfactor,  unsigned char rfactor, unsigned char pfactor,  uint32_t *out, size_t bytes)
+void scrypt_jane(const void* password, size_t password_len, const void* salt, size_t salt_len, unsigned char Nfactor,  unsigned char rfactor, unsigned char pfactor,  uint32_t *out, size_t bytes)
 {
 
  return scrypt((const unsigned char*)password, password_len, (const unsigned char*)salt, salt_len, Nfactor, rfactor, pfactor, (unsigned char*)out, bytes);

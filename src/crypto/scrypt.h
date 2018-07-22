@@ -47,7 +47,7 @@ static inline void le32enc(void *pp, uint32_t x)
 #endif
 
 
-void scrypt_hash(const void *password, size_t password_len, const void *salt, size_t salt_len, unsigned char Nfactor,  unsigned char rfactor, unsigned char pfactor,  uint32_t *out, size_t bytes);
+void scrypt_jane(const void *password, size_t password_len, const void *salt, size_t salt_len, unsigned char Nfactor,  unsigned char rfactor, unsigned char pfactor,  uint32_t *out, size_t bytes);
 
 
 #endif
