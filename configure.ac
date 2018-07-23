@@ -563,9 +563,6 @@ else
   AC_SEARCH_LIBS([clock_gettime],[rt])
 fi
 
-# scrypt-jane requires
- AX_CHECK_COMPILE_FLAG([-fPIC],[PIC_FLAGS="-fPIC"])
-
 if test x$TARGET_OS != xwindows; then
   # All windows code is PIC, forcing it on just adds useless compile warnings
   AX_CHECK_COMPILE_FLAG([-fPIC],[PIC_FLAGS="-fPIC"])
@@ -588,11 +585,10 @@ if test x$use_hardening != xno; then
   AX_CHECK_LINK_FLAG([[-Wl,-z,relro]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,relro"])
   AX_CHECK_LINK_FLAG([[-Wl,-z,now]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,now"])
 
-# YACOIN
-#  if test x$TARGET_OS != xwindows; then
+  if test x$TARGET_OS != xwindows; then
     AX_CHECK_COMPILE_FLAG([-fPIE],[PIE_FLAGS="-fPIE"])
     AX_CHECK_LINK_FLAG([[-pie]], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -pie"])
-#  fi
+  fi
 
   case $host in
     *mingw*)
