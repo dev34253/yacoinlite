@@ -118,7 +118,8 @@ AC_ARG_ENABLE([upnp-default],
 AC_ARG_ENABLE(tests,
     AS_HELP_STRING([--disable-tests],[do not compile tests (default is to compile)]),
     [use_tests=$enableval],
-    [use_tests=yes])
+    #[use_tests=yes]
+    [use_tests=no])
 
 AC_ARG_ENABLE(gui-tests,
     AS_HELP_STRING([--disable-gui-tests],[do not compile GUI tests (default is to compile if GUI and tests enabled)]),
@@ -240,6 +241,8 @@ if test "x$enable_debug" = xyes; then
         CXXFLAGS="$CXXFLAGS -g3 -O0"
     fi
 fi
+
+CFLAGS="$CFLAGS -fPIC"
 
 ERROR_CXXFLAGS=
 if test "x$enable_werror" = "xyes"; then
