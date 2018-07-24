@@ -242,8 +242,6 @@ if test "x$enable_debug" = xyes; then
     fi
 fi
 
-CFLAGS="$CFLAGS -fPIC"
-
 ERROR_CXXFLAGS=
 if test "x$enable_werror" = "xyes"; then
   if test "x$CXXFLAG_WERROR" = "x"; then
@@ -566,6 +564,7 @@ fi
 if test x$TARGET_OS != xwindows; then
   # All windows code is PIC, forcing it on just adds useless compile warnings
   AX_CHECK_COMPILE_FLAG([-fPIC],[PIC_FLAGS="-fPIC"])
+  CFLAGS="$CFLAGS -fPIC"
 fi
 
 if test x$use_hardening != xno; then
