@@ -33,7 +33,7 @@ extern "C" {
 }
 
 
-#include "crypto/scrypt.h"
+#include <crypto/scrypt.h>
 //#include "util.h"
 #include <stdlib.h>
 #include <stdint.h>
