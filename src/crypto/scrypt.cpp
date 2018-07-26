@@ -29,7 +29,7 @@
 
 
 extern "C" {
-#include <crypto/scrypt-jane/scrypt-jane.h>
+#include <crypto/scrypt-jane.h>
 }
 
 
