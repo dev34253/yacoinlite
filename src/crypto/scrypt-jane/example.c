@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include <crypto/scrypt-jane/code/scrypt-jane.h>
+#include <crypto/scrypt-jane/scrypt-jane.h>
 
 
 int main(void) {
