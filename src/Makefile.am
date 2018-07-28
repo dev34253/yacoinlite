@@ -278,7 +278,17 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/scrypt-jane/code/scrypt-jane-portable.h \
   crypto/scrypt-jane/code/scrypt-jane-portable-x86.h \
   crypto/scrypt-jane/code/scrypt-jane-hash.h \
+  crypto/scrypt-jane/code/scrypt-jane-hash_sha512.h \
+  crypto/scrypt-jane/code/scrypt-jane-pbkdf2.h \
   crypto/scrypt-jane/code/scrypt-jane-romix.h \
+  crypto/scrypt-jane/code/scrypt-jane-chacha.h \
+  crypto/scrypt-jane/code/scrypt-jane-romix-basic.h \
+  crypto/scrypt-jane/code/scrypt-jane-mix_chacha-xop.h \
+  crypto/scrypt-jane/code/scrypt-jane-mix_chacha-avx.h \
+  crypto/scrypt-jane/code/scrypt-jane-mix_chacha-ssse3.h \
+  crypto/scrypt-jane/code/scrypt-jane-mix_chacha-sse2.h \
+  crypto/scrypt-jane/code/scrypt-jane-mix_chacha.h \
+  crypto/scrypt-jane/code/scrypt-jane-romix-template.h \
   crypto/scrypt-jane/code/scrypt-jane-test-vectors.h \
   crypto/sha1.cpp \
   crypto/sha1.h \
