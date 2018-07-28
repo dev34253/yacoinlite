@@ -272,8 +272,13 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/scrypt.cpp \
   crypto/scrypt-sse2.cpp \
   crypto/scrypt.h \
-  crypto/scrypt-jane.c \
-  crypto/scrypt-jane.h \
+  crypto/scrypt-jane/scrypt-jane.c \
+  crypto/scrypt-jane/scrypt-jane.h \
+  crypto/scrypt-jane/code/scrypt-conf.h \
+  crypto/scrypt-jane/code/scrypt-jane-portable.h \
+  crypto/scrypt-jane/code/scrypt-jane-hash.h \
+  crypto/scrypt-jane/code/scrypt-jane-romix.h \
+  crypto/scrypt-jane/code/scrypt-jane-test-vectors.h \
   crypto/sha1.cpp \
   crypto/sha1.h \
   crypto/sha256.cpp \
@@ -487,7 +492,7 @@ CLEANFILES += wallet/test/*.gcda wallet/test/*.gcno
 CLEANFILES += zmq/*.gcda zmq/*.gcno
 CLEANFILES += obj/build.h
 
-EXTRA_DIST = $(CTAES_DIST)
+EXTRA_DIST = $(CTAES_DIST) 
 
 
 config/bitcoin-config.h: config/stamp-h1

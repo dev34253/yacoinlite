@@ -6,13 +6,13 @@
 
 #include <string.h>
 
-#include <crypto/code/scrypt-conf.h>
+#include <crypto/scrypt-jane/code/scrypt-conf.h>
 
-#include <crypto/scrypt-jane.h>
-#include <crypto/code/scrypt-jane-portable.h>
-#include <crypto/code/scrypt-jane-hash.h>
-#include <crypto/code/scrypt-jane-romix.h>
-#include <crypto/code/scrypt-jane-test-vectors.h>
+#include <crypto/scrypt-jane/scrypt-jane.h>
+#include <crypto/scrypt-jane/code/scrypt-jane-portable.h>
+#include <crypto/scrypt-jane/code/scrypt-jane-hash.h>
+#include <crypto/scrypt-jane/code/scrypt-jane-romix.h>
+#include <crypto/scrypt-jane/code/scrypt-jane-test-vectors.h>
 
 
 #define scrypt_maxNfactor 30  /* (1 << (30 + 1)) = ~2 billion */
