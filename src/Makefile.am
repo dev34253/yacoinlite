@@ -276,6 +276,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/scrypt-jane/scrypt-jane.h \
   crypto/scrypt-jane/code/scrypt-conf.h \
   crypto/scrypt-jane/code/scrypt-jane-portable.h \
+  crypto/scrypt-jane/code/scrypt-jane-portable-x86.h \
   crypto/scrypt-jane/code/scrypt-jane-hash.h \
   crypto/scrypt-jane/code/scrypt-jane-romix.h \
   crypto/scrypt-jane/code/scrypt-jane-test-vectors.h \
