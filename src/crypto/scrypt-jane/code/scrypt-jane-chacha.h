@@ -9,13 +9,13 @@ typedef uint32_t scrypt_mix_word_t;
 #define SCRYPT_BLOCK_WORDS (SCRYPT_BLOCK_BYTES / sizeof(scrypt_mix_word_t))
 
 /* must have these here in case block bytes is ever != 64 */
-#include "scrypt-jane-romix-basic.h"
+#include <crypto/scrypt-jane/code/scrypt-jane-romix-basic.h>
 
-#include "scrypt-jane-mix_chacha-xop.h"
-#include "scrypt-jane-mix_chacha-avx.h"
-#include "scrypt-jane-mix_chacha-ssse3.h"
-#include "scrypt-jane-mix_chacha-sse2.h"
-#include "scrypt-jane-mix_chacha.h"
+#include <crypto/scrypt-jane/code/scrypt-jane-mix_chacha-xop.h>
+#include <crypto/scrypt-jane/code/scrypt-jane-mix_chacha-avx.h>
+#include <crypto/scrypt-jane/code/scrypt-jane-mix_chacha-ssse3.h>
+#include <crypto/scrypt-jane/code/scrypt-jane-mix_chacha-sse2.h>
+#include <crypto/scrypt-jane/code/scrypt-jane-mix_chacha.h>
 
 #if defined(SCRYPT_CHACHA_XOP)
 	#define SCRYPT_CHUNKMIX_FN scrypt_ChunkMix_xop
@@ -23,7 +23,7 @@ typedef uint32_t scrypt_mix_word_t;
 	#define SCRYPT_MIX_FN chacha_core_xop
 	#define SCRYPT_ROMIX_TANGLE_FN scrypt_romix_nop
 	#define SCRYPT_ROMIX_UNTANGLE_FN scrypt_romix_nop
-	#include "scrypt-jane-romix-template.h"
+	#include <crypto/scrypt-jane/code/scrypt-jane-romix-template.h>
 #endif
 
 #if defined(SCRYPT_CHACHA_AVX)
@@ -32,7 +32,7 @@ typedef uint32_t scrypt_mix_word_t;
 	#define SCRYPT_MIX_FN chacha_core_avx
 	#define SCRYPT_ROMIX_TANGLE_FN scrypt_romix_nop
 	#define SCRYPT_ROMIX_UNTANGLE_FN scrypt_romix_nop
-	#include "scrypt-jane-romix-template.h"
+	#include <crypto/scrypt-jane/code/scrypt-jane-romix-template.h>
 #endif
 
 #if defined(SCRYPT_CHACHA_SSSE3)
@@ -41,7 +41,7 @@ typedef uint32_t scrypt_mix_word_t;
 	#define SCRYPT_MIX_FN chacha_core_ssse3
 	#define SCRYPT_ROMIX_TANGLE_FN scrypt_romix_nop
 	#define SCRYPT_ROMIX_UNTANGLE_FN scrypt_romix_nop
-	#include "scrypt-jane-romix-template.h"
+	#include <crypto/scrypt-jane/code/scrypt-jane-romix-template.h>
 #endif
 
 #if defined(SCRYPT_CHACHA_SSE2)
@@ -50,7 +50,7 @@ typedef uint32_t scrypt_mix_word_t;
 	#define SCRYPT_MIX_FN chacha_core_sse2
 	#define SCRYPT_ROMIX_TANGLE_FN scrypt_romix_nop
 	#define SCRYPT_ROMIX_UNTANGLE_FN scrypt_romix_nop
-	#include "scrypt-jane-romix-template.h"
+	#include <crypto/scrypt-jane/code/scrypt-jane-romix-template.h>
 #endif
 
 /* cpu agnostic */
@@ -58,7 +58,7 @@ typedef uint32_t scrypt_mix_word_t;
 #define SCRYPT_MIX_FN chacha_core_basic
 #define SCRYPT_ROMIX_TANGLE_FN scrypt_romix_convert_endian
 #define SCRYPT_ROMIX_UNTANGLE_FN scrypt_romix_convert_endian
-#include "scrypt-jane-romix-template.h"
+#include <crypto/scrypt-jane/code/scrypt-jane-romix-template.h>
 
 #if !defined(SCRYPT_CHOOSE_COMPILETIME)
 static scrypt_ROMixfn

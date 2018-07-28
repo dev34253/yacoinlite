@@ -1,9 +1,9 @@
 #if defined(SCRYPT_CHACHA)
-#include "scrypt-jane-chacha.h"
+#include <crypto/scrypt-jane/code/scrypt-jane-chacha.h>
 #elif defined(SCRYPT_SALSA)
-#include "scrypt-jane-salsa.h"
+#include <crypto/scrypt-jane/code/scrypt-jane-salsa.h>
 #elif defined(SCRYPT_SALSA64)
-#include "scrypt-jane-salsa64.h"
+#include <crypto/scrypt-jane/code/scrypt-jane-salsa64.h>
 #else
 	#define SCRYPT_MIX_BASE "ERROR"
 	typedef uint32_t scrypt_mix_word_t;
