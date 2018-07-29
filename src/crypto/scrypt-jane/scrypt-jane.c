@@ -10,7 +10,6 @@
 
 #include <crypto/scrypt-jane/scrypt-jane.h>
 #include <crypto/scrypt-jane/code/scrypt-jane-portable.h>
-#include <crypto/scrypt-jane/code/scrypt-jane-portable-x86.h>
 #include <crypto/scrypt-jane/code/scrypt-jane-hash.h>
 #include <crypto/scrypt-jane/code/scrypt-jane-romix.h>
 #include <crypto/scrypt-jane/code/scrypt-jane-test-vectors.h>
