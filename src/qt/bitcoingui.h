@@ -37,7 +37,6 @@ class QProgressBar;
 class QProgressDialog;
 QT_END_NAMESPACE
 
-
 // POW mining status
 enum MiningStatus
 {
@@ -237,7 +236,6 @@ private Q_SLOTS:
     void showDebugWindowActivateConsole();
     /** Show help message dialog */
     void showHelpMessageClicked();
-
 #ifndef Q_OS_MAC
     /** Handle tray icon clicked */
     void trayIconActivated(QSystemTrayIcon::ActivationReason reason);

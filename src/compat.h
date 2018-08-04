@@ -74,7 +74,6 @@ typedef unsigned int SOCKET;
 #define THREAD_PRIORITY_NORMAL          0
 #define THREAD_PRIORITY_ABOVE_NORMAL    (-2)
 
-
 #ifdef WIN32
 #ifndef S_IRUSR
 #define S_IRUSR             0400

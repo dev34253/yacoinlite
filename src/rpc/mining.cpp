@@ -218,8 +218,6 @@ UniValue getmininginfo(const JSONRPCRequest& request)
 
     LOCK(cs_main);
 
-
-
     UniValue obj(UniValue::VOBJ);
     obj.push_back(Pair("blocks",           (int)chainActive.Height()));
     obj.push_back(Pair("currentblockweight", (uint64_t)nLastBlockWeight));
@@ -984,7 +982,6 @@ UniValue estimaterawfee(const JSONRPCRequest& request)
     return result;
 }
 
-
 UniValue getgenerate(const JSONRPCRequest& request)
 {
     if (request.fHelp || request.params.size() != 0)
@@ -1055,7 +1052,6 @@ UniValue setgenerate(const JSONRPCRequest& request)
     std::string msg = std::to_string(nGenProcLimit) + " of " + std::to_string(numCores);
     return msg;
 }
-
 
 static const CRPCCommand commands[] =
 { //  category              name                      actor (function)         argNames

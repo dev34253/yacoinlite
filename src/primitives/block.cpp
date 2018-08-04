@@ -40,19 +40,19 @@ int CBlockHeader::GetNfactor() const
 
 // Possible future implementation
 //      else if((lasthashchar == "0") || (lasthashchar == "6") || (lasthashchar == "a")){
-//               Nfactor = 18;}
+//               Nfactor = 15;}
 //      else if((lasthashchar == "1") || (lasthashchar == "b")){
-//               Nfactor = 18;}
+//               Nfactor = 16;}
 //      else if((lasthashchar == "2") || (lasthashchar == "7") || (lasthashchar == "c")){
-//               Nfactor = 19;}
+//               Nfactor = 17;}
 //      else if((lasthashchar == "3") || (lasthashchar == "d")){
-//               Nfactor = 19;}
+//               Nfactor = 18;}
 //      else if((lasthashchar == "4") || (lasthashchar == "9") || (lasthashchar == "e")){
 //               Nfactor = 19;}
 //      else if((lasthashchar == "5") || (lasthashchar == "f")){
 //               Nfactor = 20;}
 //      else if((lasthashchar == "8")){
-//               Nfactor = 20;}
+//               Nfactor = 21;}
 
       return Nfactor;
 }

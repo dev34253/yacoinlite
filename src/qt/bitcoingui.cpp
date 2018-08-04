@@ -130,9 +130,6 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
         // Restore failed (perhaps missing setting), center the window
         move(QApplication::desktop()->availableGeometry().center() - frameGeometry().center());
     setStyleSheet("selection-color: #000066;");
-    //resize(850, 550);
-
-
     }
 
     QString windowTitle = tr(PACKAGE_NAME) + " - ";
@@ -341,7 +338,6 @@ void BitcoinGUI::createActions()
     connect(receiveCoinsMenuAction, SIGNAL(triggered()), this, SLOT(gotoReceiveCoinsPage()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(showNormalIfMinimized()));
     connect(historyAction, SIGNAL(triggered()), this, SLOT(gotoHistoryPage()));
-
 #endif // ENABLE_WALLET
 
     quitAction = new QAction(platformStyle->TextColorIcon(":/icons/quit"), tr("E&xit"), this);
@@ -530,7 +526,6 @@ void BitcoinGUI::setClientModel(ClientModel *_clientModel)
         QTimer *timer = new QTimer(this);
         connect(timer, SIGNAL(timeout()), this, SLOT(updateMining()));
         timer->start(1000); //1 second
-
 
         rpcConsole->setClientModel(_clientModel);
 #ifdef ENABLE_WALLET
