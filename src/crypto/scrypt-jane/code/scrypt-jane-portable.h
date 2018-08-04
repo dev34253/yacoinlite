@@ -300,7 +300,10 @@ scrypt_ensure_zero(void *p, size_t len) {
 #endif
 }
 
+extern "C" {
 #include <crypto/scrypt-jane/code/scrypt-jane-portable-x86.h>
+}
+
 
 #if !defined(asm_calling_convention)
 #define asm_calling_convention
