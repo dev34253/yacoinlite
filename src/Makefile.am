@@ -274,6 +274,7 @@ crypto_libbitcoin_crypto_a_SOURCES = \
   crypto/scrypt.h \
   crypto/scrypt-jane/scrypt-jane.c \
   crypto/scrypt-jane/scrypt-jane.h \
+  crypto/scrypt-jane/code/scrypt-jane-portable-x86.h \
   crypto/sha1.cpp \
   crypto/sha1.h \
   crypto/sha256.cpp \

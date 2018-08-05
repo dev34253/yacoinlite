@@ -459,4 +459,10 @@ get_top_cpuflag_desc(size_t flag) {
 	#endif
 #endif
 
+#else
+    static size_t
+    detect_cpu(void) {
+    }
+
+
 #endif /* defined(CPU_X86) || defined(CPU_X86_64) */
