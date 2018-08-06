@@ -18,7 +18,7 @@ extern "C" {
 #include <crypto/scrypt.h>
 
 // DEBUG
-#include <util.h>
+//#include <util.h>
 #include <arith_uint256.h>
 
 static int block_length = 63;
@@ -82,16 +82,6 @@ uint256 CBlockHeader::GetPoWHash() const
     arith_uint256 CombinedHash = (ArithLTCHash + ArithYACHash);
 
     finalhash = ArithToUint256(CombinedHash);
-
-    /* DEBUG
-    LogPrintf("PreviousBlockHash = %s\n", spb);
-    LogPrintf("Salt = %d\n",salt);
-    LogPrintf("PreviousBlockHashChar = %s\n", lasthashchar);
-    LogPrintf("Nfactor = %d\n",GetNfactor());
-    LogPrintf("YacoinHash = %s\n", yhash.ToString());
-    LogPrintf("LiteCnHash = %s\n", thash.ToString());
-    LogPrintf("combinedhash = %s\n", combinedhash.ToString());
-    */
 
     return finalhash;
 }
