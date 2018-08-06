@@ -35,6 +35,8 @@
 #include <util.h>
 
 #include <iostream>
+#include <chrono>
+#include <thread>
 
 #include <miner.h>
 #include <rpc/mining.h>
@@ -804,7 +806,7 @@ void BitcoinGUI::mineYacoins()
                     gArgs.SoftSetArg("-gen", (fGenerate ? "1" : "0"));
                     nHashesPerSec = 0;
                     nHashesDone = 0;
-                    sleep(3);
+                    std::this_thread::sleep_for (std::chrono::seconds(2));
                     powminer = POW_OFF;
                     minerAction->setStatusTip(tr("CPU MINER IS OFF"));
                     break;
